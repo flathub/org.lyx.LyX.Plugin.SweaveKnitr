@@ -12,24 +12,29 @@ build-options:
 modules:
   - name: gcc
     buildsystem: autotools
+    config-opts:
+      - --disable-multilib
     sources:
       - type: archive
         url: https://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
         sha512: d99e4826a70db04504467e349e9fbaedaa5870766cda7c5cab50cdebedc4be755ebca5b789e1232a34a20be1a0b60097de9280efe47bdb71c73251e30b0862a2
-    sources:
+
       - type: archive
         url: https://gcc.gnu.org/pub/gcc/infrastructure/gmp-6.2.1.tar.bz2
-        sha256: 8904334a3bcc5c896ececabc75cda9dec642e401fb5397c4992c4fabea5e962c9ce8bd44e8e4233c34e55c8010cc28db0545f5f750cbdbb5f00af538dc763be9
-    sources:
+        sha512: 8904334a3bcc5c896ececabc75cda9dec642e401fb5397c4992c4fabea5e962c9ce8bd44e8e4233c34e55c8010cc28db0545f5f750cbdbb5f00af538dc763be9
+        dest: gmp/
+
       - type: archive
-        https://gcc.gnu.org/pub/gcc/infrastructure/mpc-1.2.1.tar.gz
+        url: https://gcc.gnu.org/pub/gcc/infrastructure/mpc-1.2.1.tar.gz
         sha512: 3279f813ab37f47fdcc800e4ac5f306417d07f539593ca715876e43e04896e1d5bceccfb288ef2908a3f24b760747d0dbd0392a24b9b341bc3e12082e5c836ee
-    sources:
+        dest: mpc/
+
       - type: archive
         url: https://gcc.gnu.org/pub/gcc/infrastructure/mpfr-4.1.0.tar.bz2
         sha512: 410208ee0d48474c1c10d3d4a59decd2dfa187064183b09358ec4c4666e34d74383128436b404123b831e585d81a9176b24c7ced9d913967c5fce35d4040a0b4
+        dest: mpfr/
 
-- name: R
+  - name: R
     buildsystem: autotools
     sources:
       - type: archive
