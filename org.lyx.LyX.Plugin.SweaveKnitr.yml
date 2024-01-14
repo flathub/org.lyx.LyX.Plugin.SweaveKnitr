@@ -10,6 +10,12 @@ build-options:
   prepend-ld-library-path: /app/plugins/SweaveKnitr/lib
   prepend-pkg-config-path: /app/plugins/SweaveKnitr/lib/pkgconfig
 modules:
+  - name: gcc
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
+        sha512: d99e4826a70db04504467e349e9fbaedaa5870766cda7c5cab50cdebedc4be755ebca5b789e1232a34a20be1a0b60097de9280efe47bdb71c73251e30b0862a2
   - name: R
     buildsystem: autotools
     sources:
