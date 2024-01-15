@@ -40,10 +40,10 @@ modules:
     build-options:
       arch:
         x86_64:
-          config-opt:
+          config-opts:
             - --enable-libmpx
         arm:
-          config-opt:
+          config-opts:
             - --build=arm-unknown-linux-gnueabi
             - --with-mode=thumb
             - --with-fpu=vfpv3-d16
