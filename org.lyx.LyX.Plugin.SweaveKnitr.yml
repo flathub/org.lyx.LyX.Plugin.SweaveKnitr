@@ -21,11 +21,9 @@ modules:
       - --enable-default-pie
       - --enable-default-ssp
       - --with-isl
-      - --with-tune=generic
       - --disable-libssp
       - --enable-linker-build-id
       - --disable-libstdcxx-filesystem-ts
-      - --enable-cet
       - --enable-shared
 
     build-options:
