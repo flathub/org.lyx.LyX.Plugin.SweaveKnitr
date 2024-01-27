@@ -13,6 +13,7 @@ modules:
   - name: gcc
     buildsystem: autotools
     config-opts:
+      - --enable-deterministic-archives
       - --disable-multilib
       - --enable-multiarch
       - --enable-languages=c,c++,fortran
@@ -20,6 +21,7 @@ modules:
       - --enable-default-pie
       - --enable-default-ssp
       - --with-isl
+      - --with-tune=generic
       - --disable-libssp
       - --enable-linker-build-id
       - --disable-libstdcxx-filesystem-ts
@@ -32,12 +34,10 @@ modules:
           config-opts:
             - --host=x86_64-unknown-linux-gnu
             - --target=x86_64-unknown-linux-gnu
-        arm:
+        aarch64:
           config-opts:
-            - --build=arm-unknown-linux-gnueabi
-            - --with-mode=thumb
-            - --with-fpu=vfpv3-d16
-            - --with-arch=armv7-a
+            - --host=aarch64-unknown-linux-gnu
+            - --target=aarch64-unknown-linux-gnu
     sources:
       - type: archive
         url: https://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
