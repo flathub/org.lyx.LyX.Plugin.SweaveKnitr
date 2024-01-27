@@ -14,34 +14,24 @@ modules:
     buildsystem: autotools
     config-opts:
       - --disable-multilib
+      - --enable-multiarch
       - --enable-languages=c,c++,fortran
-      - --enable-__cxa_atexit
-      - --enable-checking=release
-      - --enable-clocale=gnu
+      - --disable-bootstrap
       - --enable-default-pie
       - --enable-default-ssp
-      - --enable-gnu-indirect-function
-      - --enable-gnu-unique-object
-      - --enable-install-libiberty
-      - --enable-linker-build-id
-      - --enable-plugin
-      - --enable-shared
-      - --enable-threads=posix
-      - --disable-bootstrap
+      - --with-isl
       - --disable-libssp
-      - --disable-libstdcxx-pch
-      - --disable-libunwind-exceptions
-      - --disable-multilib
-      - --disable-stage1-checking
-      - --disable-werror
-      - --with-linker-hash-style=gnu
-      - --with-system-zlib
+      - --enable-linker-build-id
+      - --disable-libstdcxx-filesystem-ts
+      - --enable-cet
+      - --enable-shared
 
     build-options:
       arch:
         x86_64:
           config-opts:
-            - --enable-libmpx
+            - --host=x86_64-unknown-linux-gnu
+            - --target=x86_64-unknown-linux-gnu
         arm:
           config-opts:
             - --build=arm-unknown-linux-gnueabi
@@ -67,6 +57,11 @@ modules:
         url: https://gcc.gnu.org/pub/gcc/infrastructure/mpfr-4.1.0.tar.bz2
         sha512: 410208ee0d48474c1c10d3d4a59decd2dfa187064183b09358ec4c4666e34d74383128436b404123b831e585d81a9176b24c7ced9d913967c5fce35d4040a0b4
         dest: mpfr/
+
+      - type: isl
+        url: https://gcc.gnu.org/pub/gcc/infrastructure/isl-0.24.tar.bz2
+        sha512: aab3bddbda96b801d0f56d2869f943157aad52a6f6e6a61745edd740234c635c38231af20bc3f1a08d416a5e973a90e18249078ed8e4ae2f1d5de57658738e95
+        dest: isl/
 
   - name: R
     buildsystem: autotools
