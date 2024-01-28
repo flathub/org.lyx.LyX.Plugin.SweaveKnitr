@@ -20,11 +20,11 @@ modules:
       - --disable-bootstrap
       - --enable-default-pie
       - --enable-default-ssp
-      - --with-isl
       - --disable-libssp
       - --enable-linker-build-id
       - --disable-libstdcxx-filesystem-ts
       - --enable-shared
+      - --enable-__cxa_atexit
 
     build-options:
       arch:
