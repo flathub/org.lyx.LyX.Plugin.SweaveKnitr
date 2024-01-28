@@ -24,6 +24,16 @@ modules:
       - --enable-linker-build-id
       - --disable-libstdcxx-filesystem-ts
       - --enable-shared
+    build-options:
+      arch:
+        x86_64:
+          config-opts:
+            - --host=x86_64-pc-linux-gnu
+            - --target=x86_64-pc-linux-gnu
+        aarch64:
+          config-opts:
+            - --host=aarch64-pc-linux-gnu
+            - --target=aarch64-pc-linux-gnu
 
     sources:
       - type: archive
