@@ -25,15 +25,6 @@ modules:
       - --disable-libstdcxx-filesystem-ts
       - --enable-shared
 
-    build-options:
-      arch:
-        x86_64:
-          config-opts:
-            - --target=x86_64-unknown-linux-gnu
-        aarch64:
-          config-opts:
-            - --target=aarch64-unknown-linux-gnu
-
     sources:
       - type: archive
         url: https://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
