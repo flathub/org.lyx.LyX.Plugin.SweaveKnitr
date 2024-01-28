@@ -25,6 +25,7 @@ modules:
       - --disable-libstdcxx-filesystem-ts
       - --enable-shared
       - --enable-__cxa_atexit
+      - --enable-gnu-indirect-function
 
     build-options:
       arch:
