@@ -24,19 +24,16 @@ modules:
       - --enable-linker-build-id
       - --disable-libstdcxx-filesystem-ts
       - --enable-shared
-      - --enable-__cxa_atexit
-      - --enable-gnu-indirect-function
 
     build-options:
       arch:
         x86_64:
           config-opts:
-            - --host=x86_64-unknown-linux-gnu
             - --target=x86_64-unknown-linux-gnu
         aarch64:
           config-opts:
-            - --host=aarch64-unknown-linux-gnu
             - --target=aarch64-unknown-linux-gnu
+
     sources:
       - type: archive
         url: https://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
