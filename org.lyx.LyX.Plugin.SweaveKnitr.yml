@@ -30,6 +30,7 @@ modules:
           config-opts:
             - --host=x86_64-pc-linux-gnu
             - --target=x86_64-pc-linux-gnu
+            - --with-tune=generic
         aarch64:
           config-opts:
             - --host=aarch64-unknown-linux-gnu
