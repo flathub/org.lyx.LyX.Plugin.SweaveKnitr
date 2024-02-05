@@ -36,7 +36,6 @@ modules:
             - --target=aarch64-unknown-linux-gnu
     post-install:
       - ls /app/plugins/SweaveKnitr/include/
-      - cd /app/plugins/SweaveKnitr/include/ && tree -L 2
 
     sources:
       - type: archive
