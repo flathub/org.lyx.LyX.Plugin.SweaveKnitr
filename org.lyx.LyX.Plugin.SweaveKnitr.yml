@@ -14,35 +14,35 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://mirror.las.iastate.edu/CRAN/src/base/R-4/R-4.3.3.tar.gz
-        sha256: 80851231393b85bf3877ee9e39b282e750ed864c5ec60cbd68e6e139f0520330
+        url: https://mirror.las.iastate.edu/CRAN/src/base/R-4/R-4.4.1.tar.gz
+        sha256: b4cb675deaaeb7299d3b265d218cde43f192951ce5b89b7bb1a5148a36b2d94d
   - name: knitr
     buildsystem: simple
     build-commands:
-      - R -e "install.packages('evaluate_0.23.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('xfun_0.43.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('highr_0.10.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('yaml_2.3.8.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('knitr_1.46.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('evaluate_1.0.0.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('xfun_0.48.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('highr_0.11.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('yaml_2.3.10.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('knitr_1.48.tar.gz', repos = NULL, type = 'source')"
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
       - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
         ${FLATPAK_ID}
     sources:
       - type: file
-        url: https://cran.r-project.org/src/contrib/knitr_1.46.tar.gz
-        sha256: 8f51c33c93a8c1a87ca618c9254372d9407948707e544d0d796c6b960e9fe859
+        url: https://cran.r-project.org/src/contrib/knitr_1.48.tar.gz
+        sha256: 501b5926da7da1e8df61958639537e4c30110a0a8de07381afd92b31b9bff197
       - type: file
-        url: https://cran.r-project.org/src/contrib/evaluate_0.23.tar.gz
-        sha256: c9cf9c37502b8fbfa78e4eb96b8c3d1789060e49505c86c07cb7476da804a45c
+        url: https://cran.r-project.org/src/contrib/evaluate_1.0.0.tar.gz
+        sha256: 61e095e28f93c73828649ea755c8d2cad5b533ed9b5d1bfc2f6ba49dc20b937a
       - type: file
-        url: https://cran.r-project.org/src/contrib/highr_0.10.tar.gz
-        sha256: ec55bc1ff66390ed66806dc2a7b6c17dbfd089b3d73fe2e369017f8cb4bc347b
+        url: https://cran.r-project.org/src/contrib/highr_0.11.tar.gz
+        sha256: e90d14284001963325a84a9dbeef029609d52515da8d65c87ae61be21b7fe0a7
       - type: file
-        url: https://cran.r-project.org/src/contrib/xfun_0.43.tar.gz
-        sha256: 59ad462a52ed6fca01647807f8108f0c47769744f958a766a85282d9494e16c3
+        url: https://cran.r-project.org/src/contrib/xfun_0.48.tar.gz
+        sha256: 27668c445257456a759015ab494edb4dc54af06e36523be423d313af651c932e
       - type: file
-        url: https://cran.r-project.org/src/contrib/yaml_2.3.8.tar.gz
-        sha256: 9ed079e2159cae214f3fefcbc4c8eb3b888ceabe902350adbdb1d181eda23fd8
+        url: https://cran.r-project.org/src/contrib/yaml_2.3.10.tar.gz
+        sha256: e236d42d366e361d4855aa4f520260debd53a31e4786442b94770b045da02a6d
       - type: file
         path: org.lyx.LyX.Plugin.SweaveKnitr.metainfo.xml
