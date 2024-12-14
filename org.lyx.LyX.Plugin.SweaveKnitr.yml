@@ -4,6 +4,8 @@ runtime-version: stable
 sdk: org.kde.Sdk//5.15-23.08
 build-extension: true
 appstream-compose: false
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.texlive
 build-options:
   prefix: /app/plugins/SweaveKnitr
   prepend-path: /app/plugins/SweaveKnitr/bin
