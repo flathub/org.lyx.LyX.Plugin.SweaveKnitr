@@ -22,7 +22,7 @@ modules:
   - name: boost #macaulay2
     buildsystem: simple
     buildcommands:
-      - ./bootstrap.sh --prefix=/app --with-libraries=locale,filesystem,system,date_time,regex,program_options
+      - ./bootstrap.sh --prefix=/app/plugins/SweaveKnitr --with-libraries=locale,filesystem,system,date_time,regex,program_options
       - ./b2 headers
       - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
     sources:
@@ -57,6 +57,8 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     subdir: M2
+    config-opts:
+      - -DLAPACK_DIR=/app/plugins/SweaveKnitr/lib
     sources:
       - type: archive
         url: https://github.com/Macaulay2/M2/archive/refs/tags/release-1.24.11.tar.gz
