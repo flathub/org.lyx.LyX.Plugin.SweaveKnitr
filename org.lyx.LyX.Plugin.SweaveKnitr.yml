@@ -63,6 +63,7 @@ modules:
       - type: git
         url: https://github.com/Macaulay2/M2.git
         tag: version-1.16.99
+        commit: 37da7388ec1f4530772899752a6c214dd1801fcb
   - name: giac
     buildsystem: autotools
     sources:
