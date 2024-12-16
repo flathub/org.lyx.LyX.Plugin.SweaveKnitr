@@ -73,7 +73,7 @@ modules:
         dest: submodules/mathic
       - type: git
         url: https://github.com/Macaulay2/mathicgb.git
-        sha256: 4cd2bd1357107cf0c83661fdda66c94987de4608
+        commit: 4cd2bd1357107cf0c83661fdda66c94987de4608
         dest: submodules/mathicgb
   - name: giac
     buildsystem: autotools
