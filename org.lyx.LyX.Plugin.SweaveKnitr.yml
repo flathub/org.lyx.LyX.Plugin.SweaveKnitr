@@ -61,21 +61,9 @@ modules:
     builddir: true
     subdir: M2
     sources:
-      - type: archive
-        url: https://github.com/Macaulay2/M2/archive/refs/tags/release-1.24.11.tar.gz
-        sha256: 6a0b4dfbb340d3ea71c8190b31fc806de76a2dcda458195f8aed4e3ef0d8be5d
       - type: git
-        url: https://github.com/Macaulay2/memtailor.git
-        commit: 51b88ac2f9b7a751ebf57913a10942cc5bc2359d
-        dest: Macaulay2/e/memtailor
-      - type: git
-        url: https://github.com/Macaulay2/mathic.git
-        commit: 865f9dcf7ac0b255edb5beea6de2e978c518fd1a
-        dest: Macaulay2/e/mathic
-      - type: git
-        url: https://github.com/Macaulay2/mathicgb.git
-        commit: 4cd2bd1357107cf0c83661fdda66c94987de4608
-        dest: Macaulay2/e/mathicgb
+        url: https://github.com/Macaulay2/M2.git
+        tag: release-1.24.11
   - name: giac
     buildsystem: autotools
     sources:
