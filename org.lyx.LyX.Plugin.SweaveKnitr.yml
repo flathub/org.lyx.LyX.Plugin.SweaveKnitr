@@ -7,9 +7,13 @@ appstream-compose: false
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
 build-options:
+  prepend-path: "/usr/lib/sdk/dotnet7/bin"
+  append-ld-library-path: "/usr/lib/sdk/dotnet7/lib"
+  append-pkg-config-path: "/usr/lib/sdk/dotnet7/lib/pkgconfig"
+build-options:
   prefix: /app/plugins/SweaveKnitr
-  prepend-path: /app/plugins/SweaveKnitr/bin
-  prepend-ld-library-path: /app/plugins/SweaveKnitr/lib
+  prepend-path: /app/plugins/SweaveKnitr/bin:/usr/sdk/texlive/bin
+  prepend-ld-library-path: /app/plugins/SweaveKnitr/lib:/usr/sdk/texlive/lib
   prepend-pkg-config-path: /app/plugins/SweaveKnitr/lib/pkgconfig
 modules:
   - name: bbt #macaulay2
@@ -24,6 +28,7 @@ modules:
   - name: boost #macaulay2
     buildsystem: simple
     build-commands:
+      - ls /usr/sdk/texlive
       - ./bootstrap.sh --prefix=/app/plugins/SweaveKnitr --with-libraries=locale,filesystem,system,date_time,regex,program_options
       - ./b2 headers
       - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
