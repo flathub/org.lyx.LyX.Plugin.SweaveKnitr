@@ -62,7 +62,7 @@ modules:
       # Use RelWithDebInfo build type for all CMake modules
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     cleanup:
-      - *
+      - /*
     sources:
       - type: archive
         url: https://github.com/google/googletest/releases/download/v1.15.2/googletest-1.15.2.tar.gz
