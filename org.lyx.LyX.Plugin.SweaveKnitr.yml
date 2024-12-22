@@ -12,7 +12,7 @@ build-options:
   append-ld-library-path: "/app/plugins/SweaveKnitr/lib:/usr/lib/sdk/texlive/lib:/usr/lib/sdk/dotnet7/lib"
   append-pkg-config-path: "/app/plugins/SweaveKnitr/lib/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig"
 modules:
-  - name: bbt #macaulay2
+  - name: tbb #macaulay2
     buildsystem: cmake-ninja
     builddir: true
     build-opts:
@@ -56,6 +56,17 @@ modules:
       - type: archive
         url: https://github.com/xianyi/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz
         sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
+  - name: googletest #macaulay2
+    buildsystem: cmake-ninja
+    config-opts:
+      # Use RelWithDebInfo build type for all CMake modules
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    cleanup:
+      - *
+    sources:
+      - type: archive
+        url: https://github.com/google/googletest/releases/download/v1.15.2/googletest-1.15.2.tar.gz
+        sha256: 7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926
   - name: macaulay2
     buildsystem: cmake-ninja
     builddir: true
