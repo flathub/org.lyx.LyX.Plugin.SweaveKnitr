@@ -1,7 +1,7 @@
 id: org.lyx.LyX.Plugin.SweaveKnitr
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//5.15-23.08
+sdk: org.kde.Sdk//6.8
 build-extension: true
 appstream-compose: false
 build-options:
