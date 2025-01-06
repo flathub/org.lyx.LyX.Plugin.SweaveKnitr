@@ -3,6 +3,7 @@ runtime: org.lyx.LyX
 runtime-version: stable
 sdk: org.kde.Sdk//6.8
 build-extension: true
+separate-locales: false
 build-options:
   prefix: /app/plugins/SweaveKnitr
   prepend-path: /app/plugins/SweaveKnitr/bin
