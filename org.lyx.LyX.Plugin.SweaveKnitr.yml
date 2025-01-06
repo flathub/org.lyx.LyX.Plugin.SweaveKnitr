@@ -1,9 +1,9 @@
 id: org.lyx.LyX.Plugin.SweaveKnitr
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//5.15-23.08
+sdk: org.kde.Sdk//6.8
 build-extension: true
-appstream-compose: false
+separate-locales: false
 build-options:
   prefix: /app/plugins/SweaveKnitr
   prepend-path: /app/plugins/SweaveKnitr/bin
@@ -26,20 +26,18 @@ modules:
       - R -e "install.packages('knitr_1.48.tar.gz', repos = NULL, type = 'source')"
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
     sources:
       - type: file
-        url: https://cran.r-project.org/src/contrib/knitr_1.48.tar.gz
+        url: https://cran.r-project.org/src/contrib/Archive/knitr/knitr_1.48.tar.gz
         sha256: 501b5926da7da1e8df61958639537e4c30110a0a8de07381afd92b31b9bff197
       - type: file
-        url: https://cran.r-project.org/src/contrib/evaluate_1.0.0.tar.gz
+        url: https://cran.r-project.org/src/contrib/Archive/evaluate/evaluate_1.0.0.tar.gz
         sha256: 61e095e28f93c73828649ea755c8d2cad5b533ed9b5d1bfc2f6ba49dc20b937a
       - type: file
         url: https://cran.r-project.org/src/contrib/highr_0.11.tar.gz
         sha256: e90d14284001963325a84a9dbeef029609d52515da8d65c87ae61be21b7fe0a7
       - type: file
-        url: https://cran.r-project.org/src/contrib/xfun_0.48.tar.gz
+        url: https://cran.r-project.org/src/contrib/Archive/xfun/xfun_0.48.tar.gz
         sha256: 27668c445257456a759015ab494edb4dc54af06e36523be423d313af651c932e
       - type: file
         url: https://cran.r-project.org/src/contrib/yaml_2.3.10.tar.gz
