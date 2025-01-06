@@ -3,7 +3,6 @@ runtime: org.lyx.LyX
 runtime-version: stable
 sdk: org.kde.Sdk//6.8
 build-extension: true
-appstream-compose: false
 build-options:
   prefix: /app/plugins/SweaveKnitr
   prepend-path: /app/plugins/SweaveKnitr/bin
@@ -26,8 +25,6 @@ modules:
       - R -e "install.packages('knitr_1.48.tar.gz', repos = NULL, type = 'source')"
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
     sources:
       - type: file
         url: https://cran.r-project.org/src/contrib/Archive/knitr/knitr_1.48.tar.gz
