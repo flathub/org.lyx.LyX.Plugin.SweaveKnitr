@@ -3,10 +3,7 @@
   <id>org.lyx.LyX.Plugin.SweaveKnitr</id>
   <extends>org.lyx.LyX</extends>
   <name>SweaveKnitr</name>
-  <summary>
-      Literate programming support with Sweave and Knitr ( R ).  
-      Plugin name: org.lyx.LyX.Plugin.SweaveKnitr
-  </summary>
+  <summary>Literate programming support with Sweave and Knitr ( R ). Plugin name: org.lyx.LyX.Plugin.SweaveKnitr</summary>
   <url type="homepage">https://www.r-project.org/</url>
   <project_license>GPL-2.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
