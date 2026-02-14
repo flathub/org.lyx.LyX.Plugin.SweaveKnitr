@@ -40,7 +40,7 @@ modules:
         url: https://cran.r-project.org/src/contrib/Archive/xfun/xfun_0.48.tar.gz
         sha256: 27668c445257456a759015ab494edb4dc54af06e36523be423d313af651c932e
       - type: file
-        url: https://cran.r-project.org/src/contrib/yaml_2.3.10.tar.gz
+        url: https://cran.r-project.org/src/contrib/Archive/yaml/yaml_2.3.10.tar.gz
         sha256: e236d42d366e361d4855aa4f520260debd53a31e4786442b94770b045da02a6d
       - type: file
         path: org.lyx.LyX.Plugin.SweaveKnitr.metainfo.xml
