@@ -1,7 +1,7 @@
 id: org.lyx.LyX.Plugin.SweaveKnitr
 runtime: org.lyx.LyX
 runtime-version: stable
-sdk: org.kde.Sdk//6.8
+sdk: org.kde.Sdk//6.10
 build-extension: true
 separate-locales: false
 build-options:
@@ -14,33 +14,38 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://mirror.las.iastate.edu/CRAN/src/base/R-4/R-4.4.1.tar.gz
-        sha256: b4cb675deaaeb7299d3b265d218cde43f192951ce5b89b7bb1a5148a36b2d94d
+        url: https://mirror.las.iastate.edu/CRAN/src/base/R-4/R-4.5.2.tar.xz
+        sha256: e1fe53b9f262fd80784ec52803a798c5ad063cba92bbad21a9aa7240331b7a1e
   - name: knitr
     buildsystem: simple
     build-commands:
-      - R -e "install.packages('evaluate_1.0.0.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('xfun_0.48.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('highr_0.11.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('yaml_2.3.10.tar.gz', repos = NULL, type = 'source')"
-      - R -e "install.packages('knitr_1.48.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('evaluate.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('xfun.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('highr.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('yaml.tar.gz', repos = NULL, type = 'source')"
+      - R -e "install.packages('knitr.tar.gz', repos = NULL, type = 'source')"
     post-install: 
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
     sources:
       - type: file
-        url: https://cran.r-project.org/src/contrib/Archive/knitr/knitr_1.48.tar.gz
-        sha256: 501b5926da7da1e8df61958639537e4c30110a0a8de07381afd92b31b9bff197
+        url: https://cran.r-project.org/src/contrib/Archive/knitr/knitr_1.50.tar.gz
+        sha256: 105f5e8420ad766c94b96a787cb3ce368d12ef8702f867d0515c4fce728e2f41
+        dest-filename: knitr.tar.gz
       - type: file
-        url: https://cran.r-project.org/src/contrib/Archive/evaluate/evaluate_1.0.0.tar.gz
-        sha256: 61e095e28f93c73828649ea755c8d2cad5b533ed9b5d1bfc2f6ba49dc20b937a
+        url: https://cran.r-project.org/src/contrib/Archive/evaluate/evaluate_1.0.4.tar.gz
+        sha256: 08dff6dcfce3cb321ab8d6851a246e698f6f641579d75c2a6875b36a65eca4ca
+        dest-filename: evaluate.tar.gz
       - type: file
         url: https://cran.r-project.org/src/contrib/highr_0.11.tar.gz
         sha256: e90d14284001963325a84a9dbeef029609d52515da8d65c87ae61be21b7fe0a7
+        dest-filename: highr.tar.gz
       - type: file
-        url: https://cran.r-project.org/src/contrib/Archive/xfun/xfun_0.48.tar.gz
-        sha256: 27668c445257456a759015ab494edb4dc54af06e36523be423d313af651c932e
+        url: https://cran.r-project.org/src/contrib/Archive/xfun/xfun_0.55.tar.gz
+        sha256: 398fc5136d3b8ca8d09bd5987e8f10421dec77f0e1175704a9f5f2d1ceb5d36e
+        dest-filename: xfun.tar.gz
       - type: file
-        url: https://cran.r-project.org/src/contrib/yaml_2.3.10.tar.gz
-        sha256: e236d42d366e361d4855aa4f520260debd53a31e4786442b94770b045da02a6d
+        url: https://cran.r-project.org/src/contrib/Archive/yaml/yaml_2.3.11.tar.gz
+        sha256: b9c4fa70b9e2ba2257d59b7d4ba5d80106ed63f66d6d2a4da26b754160bac22c
+        dest-filename: yaml.tar.gz
       - type: file
         path: org.lyx.LyX.Plugin.SweaveKnitr.metainfo.xml
